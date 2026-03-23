@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sip & Dip - Chai Cafe</title>
+
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===== COLORS ===== */
+:root {
+    --yellow: #f4c430;
+    --brown: #5a2e1f;
+    --cream: #fff8e1;
+}
+
+/* ===== GLOBAL ===== */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #fff;
+    scroll-behavior: smooth;
+}
+
+/* ===== NAVBAR ===== */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    background: rgba(90,46,31,0.95);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 44px;
+}
+
+.logo img {
+    width: 100px;
+    margin-right: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    position: relative;
+}
+
+/* underline hover */
+nav a::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: var(--yellow);
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+nav a:hover::after {
+    width: 100%;
+}
+
+/* ===== HERO ===== */
+.hero {
+    background: linear-gradient(135deg, #f4c430, #ffdd55);
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #333;
+}
+
+.hero button {
+    margin-top: 20px;
+    background: var(--brown);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    transform: scale(1.05);
+    background: #3e1f15;
+}
+
+/* ===== SECTIONS ===== */
+section {
+    padding: 70px 40px;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+/* ===== MENU ===== */
+#menu {
+    background: var(--cream);
+}
+
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.menu-item {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.menu-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.menu-item h3 {
+    margin: 0;
+}
+
+.menu-item p {
+    color: #666;
+}
+
+.menu-item b {
+    color: var(--brown);
+    font-size: 18px;
+}
+
+/* ===== EVENTS ===== */
+#events {
+    background: linear-gradient(135deg, #f4c430, #ffdd55);
+    border-radius: 30px 30px 0 0;
+}
+
+#events ul {
+    line-height: 1.8;
+}
+
+/* ===== CONTACT ===== */
+#contact {
+    background: #fafafa;
+}
+
+form {
+    max-width: 400px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--brown);
+}
+
+form button {
+    background: var(--brown);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background: #3e1f15;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: var(--brown);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+</style>
+
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="sipndiplogo.png">
+        Sip & Dip
+    </div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#events">Events</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section id="home" class="hero">
+    <h1>Warm Chai. Cozy Vibes ☕</h1>
+    <p>We bring our café experience to events & exhibitions</p>
+    <button onclick="scrollToMenu()">Explore Menu</button>
+</section>
+
+<section id="menu">
+    <h2>Our Menu</h2>
+
+    <div class="menu-container">
+
+        <div class="menu-item">
+            <h3>Masala Chai</h3>
+            <p>Spiced traditional tea</p>
+            <b>₹40</b>
+        </div>
+        
+
+        <div class="menu-item">
+            <h3>Elaichi Chai</h3>
+            <p>Cardamom flavor</p>
+            <b>₹45</b>
+        </div>
+
+        <div class="menu-item">
+            <h3>Ginger Chai</h3>
+            <p>Strong & refreshing</p>
+            <b>₹50</b>
+        </div>
+
+        <div class="menu-item">
+            <h3>Cold Coffee</h3>
+            <p>Chilled & creamy</p>
+            <b>₹80</b>
+        </div>
+
+        <div class="menu-item">
+            <h3>Samosa</h3>
+            <p>Crispy snack</p>
+            <b>₹25</b>
+        </div>
+
+        <div class="menu-item">
+            <h3>Biscuits</h3>
+            <p>Perfect with chai</p>
+            <b>₹30</b>
+        </div>
+
+    </div>
+</section>
+
+<section id="events">
+    <h2>Events & Exhibitions</h2>
+    <p>We set up premium chai counters for:</p>
+    <ul>
+        <li>✨ College Fests</li>
+        <li>✨ Exhibitions</li>
+        <li>✨ Private Events</li>
+    </ul>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+
+    <p>📞 +91 XXXXX XXXXX</p>
+    <p>📧 sipanddip@gmail.com</p>
+    <p>📍 Bangalore</p>
+
+    <form>
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <textarea placeholder="Your Message"></textarea>
+        <button type="submit">Send</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2026 Sip & Dip</p>
+</footer>
+
+<script>
+function scrollToMenu() {
+    document.getElementById("menu").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+</script>
+
+</body>
+</html>
